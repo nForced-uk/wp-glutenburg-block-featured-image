@@ -13,8 +13,8 @@
         } );
     }
     
-    blocks.registerBlockType( 'nforced-uk/random-image', {
-        title: 'Random Image',
+    blocks.registerBlockType( 'nforced-uk/wp-glutenburg-block-featured-image', {
+        title: 'Featured Image',
         icon: 'format-image',
         category: 'common',
         attributes: {
@@ -29,7 +29,7 @@
         edit: withSelect((select, props) => {
             let mediaId = wp.data.select( 'core/editor' ).getEditedPostAttribute( 'featured_media' );
 	    
-            const { getMedia } = select('core/editor'); 
+            const { getMedia } = select('core'); 
             let mediaImage = mediaId ? getMedia(mediaId) : null;
 
             return { mediaImage: mediaImage, mediaId: mediaId, props };
